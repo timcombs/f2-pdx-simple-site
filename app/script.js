@@ -16,15 +16,17 @@ $(function() {
   $("#piglatin").on("submit", function(e) {
     e.preventDefault();
 
-    var firstname = $("input[name=firstname]").val();
-    var lastname = $("input[name=lastname]").val();
-    var name = { firstname: firstname, lastname: lastname };
-
-    $.post("piglatin", name, function(response) {
-      var piglatinified = response.firstname + " " + response.lastname;
-      $("#piglatinified").text(piglatinified);
-    });
-
   });
 
 });
+
+
+
+    // var firstname = $("input[name=firstname]").val();
+    // var lastname = $("input[name=lastname]").val();
+    // var name = { firstname: firstname, lastname: lastname };
+
+    // $.post("piglatin", name, function(response) {
+    //   var piglatinified = response.firstname + " " + response.lastname;
+    //   $("#piglatinified").text(piglatinified);
+    // });
