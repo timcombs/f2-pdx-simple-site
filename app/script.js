@@ -30,8 +30,3 @@ console.log(name.lastname);
   });
 
 });
-
-
-
-
-

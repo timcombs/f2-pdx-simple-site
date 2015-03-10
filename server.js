@@ -5,7 +5,7 @@ var port = process.env.PORT || 3000;
 var piglatinify = require("./lib/piglatinify.js");
 
 app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended: true}));
+app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + "/app/"));
 
@@ -50,14 +50,6 @@ app.get("/", function(req, res) {
 app.listen(port, function() {
   console.log("server starting. available at http://localhost:" + port);
 });
-
-
-
-
-  // //if it starts with a vowel, just add "-hay" and stop here
-
-
-
 
 // app.get("/", function(req, res) {
 //   res.send("hello, universe");
