@@ -1,13 +1,11 @@
 var express = require("express");
 var app = express();
-// var bodyparser = require("body-parser");
+var bodyparser = require("body-parser");
 var port = process.env.PORT || 3000;
-// var piglatinify = require("./lib/piglatinify.js");
+var piglatinify = require("./lib/piglatinify.js");
 
-// app.use(bodyparser.json());
-// app.use(bodyparser.urlencoded({
-// extended: true
-// }));
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + "/app/"));
 
@@ -26,18 +24,14 @@ var jokes = [
     punchline: "Ten Tickles" }
 ];
 
-function piglatinify(word) {
-  var wordArray = word.split("");
-  var letters;
-  var changedWord;
-}
-
-// app.post("/piglatin", function(req, res) {
-//   var firstname = piglatinify(req.body.firstname);
-//   var lastname = piglatinify(req.body.lastname);
-//   var piglatined = { firstname: firstname, lastname: lastname };
-//   res.json(piglatined);
-// });
+app.post("/piglatin", function(req, res) {
+  console.log(req);
+  console.log(req.body);
+  var firstname = piglatinify(req.body.firstname);
+  var lastname = piglatinify(req.body.lastname);
+  var piglatined = { firstname: firstname, lastname: lastname };
+  res.json(piglatined);
+});
 
 app.get("/joke", function(req, res) {
   var randomIndex = Math.floor(Math.random() * jokes.length);
@@ -58,16 +52,11 @@ app.listen(port, function() {
 });
 
 
-  // var vowelHash = { a: 1, e: 1, i: 1, o:1, u:1, A: 1, E: 1, I: 1, O: 1, U: 1 };
+
 
   // //if it starts with a vowel, just add "-hay" and stop here
-  // if (vowelHash.hasOwnProperty(wordArray[0])) {
-  //   return word + "-hay";
-  // }
-  // //otherwise, it starts with a consonant
-  // letters = wordArray.shift();
-  // changedWord = wordArray.join("") + "-" + letters + "ay";
-  // return changedWord;
+
+
 
 
 // app.get("/", function(req, res) {
