@@ -3,6 +3,7 @@ var app = express();
 var bodyparser = require("body-parser");
 var port = process.env.PORT || 3000;
 var piglatinify = require("./lib/piglatinify.js");
+var randomgenerator = require("./lib/randomgenerator");
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -34,8 +35,8 @@ app.post("/piglatin", function(req, res) {
 });
 
 app.get("/joke", function(req, res) {
-  var randomIndex = Math.floor(Math.random() * jokes.length);
-  res.json(jokes[randomIndex]);
+  var joke = randomgenerator.val()
+  res.json(joke);
 });
 
 app.get("/quote", function(req, res) {
