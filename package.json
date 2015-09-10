@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ftimcombs/f2-pdx-simple-site"
+    "url": "https://github.com/timcombs/f2-pdx-simple-site"
   },
   "description": "Example Site for JS FII Workshop",
   "dependencies": {

@@ -12,12 +12,12 @@ var course = {
     {topic: "Building a Server & Using Ajax"},
     {topic: "Build & Deploy an App"},
     {topic: "Functional Programming with lodash"}
-  ];
+  ],
   labs: [
     {topic: "A Trip to the Zoo"},
     {topic: "Loopy Sci-Fi"},
-  ];
-}
+  ],
+};
 
 //
 // Example 1: getElementsByTagName()
