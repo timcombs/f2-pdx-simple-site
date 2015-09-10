@@ -1,9 +1,9 @@
 
 
 var course = {
-  level: 201,
+  level: "201",
   name: "Foundations II JavaScript",
-  lectures = [
+  lectures: [
     {topic: "Paperwork, Setup & JavaScript Basics (Part 1)"},
     {topic: "JavaScript Basics (Part 2) & Intro to Node"},
     {topic: "Array Methods, Functions & Scope/Hoisting"},
@@ -13,7 +13,7 @@ var course = {
     {topic: "Build & Deploy an App"},
     {topic: "Functional Programming with lodash"}
   ];
-  labs = [
+  labs: [
     {topic: "A Trip to the Zoo"},
     {topic: "Loopy Sci-Fi"},
   ];
