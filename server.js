@@ -1,53 +1,101 @@
-var express = require("express");
+var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
 
-var course: {
+// TODO: Install the body parser module in your terminal:
+//
+// npm install --save body-parser
+//
+// (Make sure you're in the root directory of your f2-pdx-simple-site project!)
+
+// Then uncomment the following lines and fill in the question marks.
+// Hint: the module name is: body-parser
+var bodyparser = require("body-parser");
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: true}));
+
+app.use(express.static(__dirname + '/app/'));
+
+var course = {
   level: 201,
-  name: "Foundations II JavaScript",
+  name: 'Foundations 2: JavaScript',
   lectures: [
-    {"topic": "Paperwork, Setup & JavaScript Basics (Part 1)"},
-    {"topic": "JavaScript Basics (Part 2) & Intro to Node"},
-    {"topic": "Array Methods, Functions & Scope/Hoisting"},
-    {"topic": "Object-Oriented Programming in JavaScript and Classes/Inheritance"},
-    {"topic": "JavaScript in the Browser & Intro to jQuery"},
-    {"topic": "Building a Server & Using Ajax"},
-    {"topic": "Build & Deploy an App"},
-    {"topic": "Functional Programming with lodash"}
+    { "topic": "Intro, Basics 1",
+      "notes": [ "The primitive data types are Boolean, Null, Undefined, Number, and String.",
+                 "Parameters become variables inside their function.",
+                 "A method is a function that is also the value of an object property."
+               ]
+    },
+    { "topic": "Basics 2",
+      "notes": [ "Logical operators return the result of the last expression evaluated.",
+                 "Loops execute the same instructions multiple times.",
+                 "An infinite loop is a loop that never satisfies its exit condition."
+               ]
+    },
+    { "topic": "Array Methods, Functions, Scope",
+      "notes": [ "join() takes a delimiter, returns a string.",
+                 "Generally useful code is often packaged up as a collection of functions and data in libraries.",
+                 "JavaScript is function-scoped."
+               ] },
+    { "topic": "Object Oriented Programming" },
+    { "topic": "JavaScript in the Browser" },
+    { "topic": "Node.js and Express" },
+    { "topic": "Workshop" },
+    { "topic": "lodash" }
   ],
   labs: [
-    {"topic": "A Trip to the Zoo"},
-    {"topic": "Loopy Sci-Fi"}
+    { "topic": "Basics" },
+    { "topic": "Object Oriented Programming"},
+    { "topic": "Project"}
   ]
 };
 
-app.listen(port, function() {
-  console.log('server started. available at http://localhost:' + port);
+function findPhrase(phrase) {
+  var results = {
+    lectures: [],
+    labs: []
+  };
+
+  // Let's start by stubbing out some functionality so we can test
+  // the other parts of our code before writing the search algorithm.
+  results.lectures = course.lectures;
+  results.labs = course.labs;
+
+  return results;
+}
+
+// TODO: Instead of app.get(), we want to follow the same pattern using app.post().
+//       Surround the following lines of code with app.post() and make sure to
+//       call your endpoint "search".
+
+// app.post
+
+
+// TODO: Once you've surrounded this code with app.post(),
+//       we need to unpack our search phrase from req.body.
+//       Instead of the question marks, specify the name of the
+//       parameter that contains our search text.
+// var searchResults = findPhrase(req.body.?????);
+// res.json(searchResults);
+
+
+
+app.get('/lectures', function (req, res) {
+  res.json(course.lectures);
 });
 
-app.get("/", function(req, res) {
-  res.send("hello universe!");
+app.get('/labs', function (req, res) {
+  res.json(course.labs);
 });
 
-app.get("/lectures", function(req, res) {
-  var randomIndexA = Math.floor(Math.random()*course.lectures.length);
-  res.send(course.lectures[randomIndexA].topic);
+app.get('/course_name', function (req, res) {
+  res.json(course.name);
 });
 
-app.get("/level", function(req, res) {
-  res.send(course.level);
+app.get('/', function (req, res) {
+  res.sendFile();
 });
 
-app.get("/name", function(req, res){
-  res.send(course.name);
+app.listen(port, function () {
+  console.log('server started on port ' + port);
 });
-
-app.get("/labs", function(req,res) {
-  var randomIndexB = Math.floor(Math.random()*course.labs.length);
-  res.send(course.labs[randomIndexB].topic);
-});
-
-
-
-
-
