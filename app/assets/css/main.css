@@ -1,1 +1,90 @@
 /* Add your CSS styling here */
+.noResults {
+  color: red;
+}
+ body {
+  background-color: #FFDAB9;
+  font-family: Verdana, sans-serif;
+  width: 750px;
+ }
+
+
+#labs, #lectures, #notes {
+  font-family: inherit;
+  font-size: 10px;
+  background: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 5px 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 1500;
+  outline: none;
+  position: relative;
+  color: #226fbe;
+  background: orange;
+  border: 2px solid darkorange;
+  border-radius: 60px;
+}
+
+#searchBox {
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 5px 5px;
+  margin-right: 50px;
+  outline: none;
+  position: relative;
+  border: 2px solid darkorange;
+  border-radius: 60px;
+}
+
+#prompt {
+  font-size: 12px;
+}
+
+#show-labs, #show-lectures, #search-results {
+  display: inline-block;
+  background-color: darkorange;
+  padding-right: 15px;
+  border-radius: 30px;
+}
+
+#pageTitle {
+  background-color: lightblue;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#theLectures, #theLabs {
+  height: 300px;
+  width: 349px;
+  background-color: lightblue;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#theLectures {
+  float: right;
+  margin-left: 5px;
+}
+
+#theLabs {
+  float: left;
+  padding-left: 20px;
+  margin-right: 5px;
+
+}
+
+#theNotes {
+  clear: both;
+  width: 730px;
+  padding-left: 20px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background-color: lightblue;
+  border-radius: 30px;
+}
