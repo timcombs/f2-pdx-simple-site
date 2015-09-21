@@ -28,9 +28,11 @@
 // }
 // window.addEventListener("load", welcomeUserToPage);
 
-$(window).on("load", function() {
-  alert("Welcome to Foundations 2!");
-});
+//$(window).on("load", function() {
+//  alert("Welcome to Foundations 2!");
+// });
+
+
 
 // $(window).on("load", welcomeUserToPage);
 

@@ -1,48 +1,36 @@
 <html>
   <head>
-    <title>?</title>
+    <title>Foundations 2: JavaScript - Course Review</title>
 
-    <!-- <link rel="stylesheet" type="text/css" href="?" /> -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
   </head>
   <body>
-    <!--
-    <h1>Foundations 2: JavaScript &mdash; Lab Summary</h1>
-    <ul id="buttons">
-      <li> <button data-lab="1">Lab 1: Assertions About Zoo Animals</button> </li>
-      <li> <button data-lab="2">Lab 1: Translating Meerkats</button> </li>
-      <li> <button data-lab="3">Lab 2: Blob Consumption Rates</button> </li>
-    </ul>
-    <ul id="lab-images">
-      <li>
-        <img src="./assets/img/red-panda.png">
-        <span>Lab 1: Assertions About Zoo Animals</span>
-      </li>
-      <li>
-        <img src="./assets/img/meerkat.jpg">
-        <span>Lab 1: Translating Meerkats</span>
-      </li>
-      <li>
-        <img src="./assets/img/blob.jpg">
-        <span>Lab 2: Blob Consumption Rates</span>
-      </li>
-    </ul>
-    -->
+    <h1 id="pageTitle"><span class="course-name"></span></h1>
 
-    <h2>Lectures</h2>
-    <button>Get Lectures</button>Get Lectures
-    <div></div>
-    <h2>Labs</h2>
-    <button>Get Labs</button>
-    <div></div>
+    <div id="theLectures">
+        <h2>Lectures</h2>
+        <div class="get-info" id="show-lectures"></div><br>
+        <button id="lectures" class="get-info">Get Lectures</button>
+    </div>
 
+    <div id="theLabs">
+        <h2>Labs</h2>
+        <div class="get-info" id="show-labs"></div><br>
+        <button id="labs" class="get-info">Get Labs</button>
+    </div>
 
-    <script>
+    <div id="theNotes">
+        <h2><span class="course-name"></span><br>Search</h2>
+        <div id="search-results"></div><br><br>
+        <div id="prompt">To search notes, enter phrases separated by commas</div>
+        <form id="search">
+            <input type="text" name="searchText" id="searchBox" placeholder="Search for phrase(s)"/>
+            <input type="submit" value="Find It" id="notes"/>
+            <label for="lucky"><input type="checkbox" name="lucky" id="lucky"> I feel lucky!</label><br>
+        </form>
+    </div>
 
-    </script>
-
-    <!-- include jQuery here -->
     <script src="./assets/lib/jquery-1.11.3.min.js"></script>
-    <!-- include your external js file here -->
-    <script src="./assets/js/jquery.js" type="text/javascript"></script>
+    <script src="./assets/js/soln.js" type="text/javascript"></script>
   </body>
 </html>
